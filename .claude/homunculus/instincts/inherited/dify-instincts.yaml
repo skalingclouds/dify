@@ -1,0 +1,702 @@
+# Instincts generated from https://github.com/skalingclouds/dify
+# Generated: 2026-03-09T11:51:52.456Z
+# Version: 2.0
+
+---
+id: dify-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix, chore, refactor, test, feat
+
+## Evidence
+
+- 200 commits analyzed
+- Detected conventional commit pattern
+- Examples: chore(deps-dev): bump the storybook group in /web with 7 updates (#33163), ci: ignore ky and tailwind-merge in update (#33167)
+
+---
+id: dify-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Commit Length
+
+## Action
+
+Write moderate-length commit messages (~50 characters)
+
+## Evidence
+
+- Average commit message length: 65 chars
+- Based on 200 commits
+
+---
+id: dify-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: dify-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: dify-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: dify-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Test Framework
+
+## Action
+
+Use vitest as the test framework
+
+## Evidence
+
+- Test framework detected: vitest
+- File pattern: *.spec.tsx
+
+---
+id: dify-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Test Naming
+
+## Action
+
+Name test files using the pattern: *.spec.tsx
+
+## Evidence
+
+- File pattern: *.spec.tsx
+- Consistent across test files
+
+---
+id: dify-test-mocking
+trigger: "when mocking dependencies in tests"
+confidence: 0.75
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Test Mocking
+
+## Action
+
+Use vi.mock for mocking
+
+## Evidence
+
+- Mocking pattern detected: vi.mock
+- Consistent across test files
+
+---
+id: dify-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Test Types
+
+## Action
+
+Write unit, integration tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration
+- Coverage config: yes
+
+---
+id: dify-workflow-database-migration
+trigger: "when modifying the database schema or adding tables"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Workflow Database Migration
+
+## Action
+
+Follow the database-migration workflow:
+1. Create migration file
+2. Update schema definitions
+3. Generate/update types
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: migrations/*, **/schema.*
+
+---
+id: dify-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~7x per month
+- Files: web/app/components/header/account-dropdown/*, web/app/components/header/utils/*, web/config/*
+
+---
+id: dify-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: src/**/*
+
+---
+id: dify-workflow-dependency-update
+trigger: "when doing dependency update"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Workflow Dependency Update
+
+## Action
+
+Follow the dependency-update workflow:
+1. Update package.json
+2. Update pnpm-lock.yaml/uv.lock
+3. Sometimes update .github/dependabot.yml
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: web/package.json, web/pnpm-lock.yaml, api/pyproject.toml
+
+---
+id: dify-workflow-unit-test-module
+trigger: "when doing unit test module"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Workflow Unit Test Module
+
+## Action
+
+Follow the unit-test-module workflow:
+1. Create test files in api/tests/unit_tests/
+2. Mirror module structure
+3. Test all major components
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: api/tests/unit_tests/controllers/**/*.py, api/tests/unit_tests/core/**/*.py
+
+---
+id: dify-workflow-bug-fix-with-test
+trigger: "when doing bug fix with test"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Workflow Bug Fix With Test
+
+## Action
+
+Follow the bug-fix-with-test workflow:
+1. Modify the implementation file
+2. Add or update unit tests
+3. Sometimes update integration tests
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: api/dify_graph/nodes/**/*.py, api/tests/unit_tests/**/*.py, api/core/**/*.py
+
+---
+id: dify-workflow-web-component-test-coverage
+trigger: "when doing web component test coverage"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Workflow Web Component Test Coverage
+
+## Action
+
+Follow the web-component-test-coverage workflow:
+1. Create .spec.tsx files
+2. Test component functionality
+3. Update eslint-suppressions.json
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: web/app/components/**/*.spec.tsx, web/eslint-suppressions.json
+
+---
+id: dify-workflow-migrate-tests-to-testcontainers
+trigger: "when doing migrate tests to testcontainers"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Workflow Migrate Tests To Testcontainers
+
+## Action
+
+Follow the migrate-tests-to-testcontainers workflow:
+1. Move test from api/tests/unit_tests/
+2. Create in api/tests/test_containers_integration_tests/
+3. Update test setup
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: api/tests/unit_tests/services/*.py, api/tests/test_containers_integration_tests/services/*.py
+
+---
+id: dify-workflow-feature-with-service-and-command
+trigger: "when doing feature with service and command"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/skalingclouds/dify
+---
+
+# Dify Workflow Feature With Service And Command
+
+## Action
+
+Follow the feature-with-service-and-command workflow:
+1. Create service in api/services/
+2. Add command to api/commands.py
+3. Add unit tests
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: api/services/**/*.py, api/commands.py, api/tests/unit_tests/services/*.py
+
+---
+id: dify-conventional-commits
+trigger: "When creating a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Conventional Commits
+
+## Action
+
+Use conventional commit format with type(scope): description, keeping under 65 characters
+
+## Evidence
+
+- All 8 example commits follow conventional format
+- Average length is 65 characters
+- Common prefixes: fix, chore, refactor, test, feat
+
+---
+id: dify-camelcase-files
+trigger: "When naming JavaScript/TypeScript files"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Camelcase Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Naming conventions show files: camelCase
+- TypeScript is primary language
+
+---
+id: dify-pascal-case-classes
+trigger: "When defining classes"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Pascal Case Classes
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Naming conventions show classes: PascalCase
+- TypeScript codebase follows this pattern
+
+---
+id: dify-screaming-snake-constants
+trigger: "When defining constants"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Screaming Snake Constants
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Naming conventions show constants: SCREAMING_SNAKE_CASE
+
+---
+id: dify-relative-imports
+trigger: "When importing modules"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Relative Imports
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Import style is relative
+- Single-package architecture supports relative imports
+
+---
+id: dify-named-exports
+trigger: "When exporting from modules"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Named Exports
+
+## Action
+
+Use named exports instead of default exports
+
+## Evidence
+
+- Export style is named
+- TypeScript codebase pattern
+
+---
+id: dify-vitest-framework
+trigger: "When writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Vitest Framework
+
+## Action
+
+Use vitest testing framework with *.spec.tsx file pattern
+
+## Evidence
+
+- Testing framework is vitest
+- File pattern is *.spec.tsx
+- Multiple workflow examples show .spec.tsx files
+
+---
+id: dify-vi-mock-style
+trigger: "When mocking in tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Vi Mock Style
+
+## Action
+
+Use vi.mock() for mocking dependencies
+
+## Evidence
+
+- Mocking style is vi.mock
+- Vitest framework uses vi namespace
+
+---
+id: dify-mirror-test-structure
+trigger: "When creating unit tests for API modules"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Mirror Test Structure
+
+## Action
+
+Mirror the module structure in api/tests/unit_tests/ directory
+
+## Evidence
+
+- Unit-test-module workflow shows mirroring structure
+- Files in api/tests/unit_tests/controllers/ and api/tests/unit_tests/core/
+
+---
+id: dify-dependency-update-workflow
+trigger: "When dependencies need to be updated"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Dependency Update Workflow
+
+## Action
+
+Update package.json, then lock files (pnpm-lock.yaml/uv.lock), optionally update dependabot.yml
+
+## Evidence
+
+- Dependency-update workflow occurs ~8x/month
+- Specific file sequence: package.json -> lock files -> dependabot.yml
+
+---
+id: dify-bug-fix-with-tests
+trigger: "When fixing a bug in core functionality"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Bug Fix With Tests
+
+## Action
+
+Modify implementation file and add/update corresponding unit tests
+
+## Evidence
+
+- Bug-fix-with-test workflow occurs ~4x/month
+- Pattern shows implementation + test changes together
+
+---
+id: dify-testcontainer-migration
+trigger: "When converting SQL-based unit tests to integration tests"
+confidence: 0.82
+domain: workflow
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Testcontainer Migration
+
+## Action
+
+Move test from api/tests/unit_tests/ to api/tests/test_containers_integration_tests/ and update setup
+
+## Evidence
+
+- Migrate-tests-to-testcontainers workflow occurs ~2x/month
+- Specific directory migration pattern
+
+---
+id: dify-service-with-command
+trigger: "When adding new CLI-accessible functionality"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Service With Command
+
+## Action
+
+Create service in api/services/, add command to api/commands.py, and add unit tests
+
+## Evidence
+
+- Feature-with-service-and-command workflow occurs ~2x/month
+- Three-step pattern: service -> command -> tests
+
+---
+id: dify-web-component-testing
+trigger: "When improving test coverage for React components"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Web Component Testing
+
+## Action
+
+Create .spec.tsx files and update eslint-suppressions.json
+
+## Evidence
+
+- Web-component-test-coverage workflow occurs ~3x/month
+- Pattern shows .spec.tsx creation + eslint updates
+
+---
+id: dify-comprehensive-module-testing
+trigger: "When adding test coverage for a module"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: skalingclouds/dify
+---
+
+# Dify Comprehensive Module Testing
+
+## Action
+
+Create test files in api/tests/unit_tests/ that mirror module structure and test all major components
+
+## Evidence
+
+- Unit-test-module workflow occurs ~5x/month
+- Pattern shows comprehensive testing of controllers and core modules
+
